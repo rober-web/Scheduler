@@ -9,7 +9,7 @@ currentDay.append(dayjs().format("dddd, MMMM D"));
 
 // 2. Function to display schedule
 const displaySchedule = () => {
-  for (let i = 0; i <= 24; i++) {
+  for (let i = 0; i <= 23; i++) {
     let isCurrentHour = currentHour == i;
     let isPastHour = currentHour > i;
     let isFutureHour = currentHour <i;
