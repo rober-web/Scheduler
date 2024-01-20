@@ -70,3 +70,24 @@ header {
   font-size: 20px;
   transition: all 0.3s ease-in-out;
 }
+
+.inputField{
+  width: 100%;
+  max-width: 100%;
+  border:none;
+  height: 3em;
+  background-color: rgba(255,255,255,0);
+}
+.inputField:focus{
+  outline:none !important;
+}
+.currentTime{
+  background-color:rgba(255, 0, 0, 0.222);
+
+}
+.pastTime{
+  background-color: rgba(212, 226, 238, 0.56);
+}
+.futureTime{
+  background-color:rgba(126, 184, 126, 0.474);
+}
