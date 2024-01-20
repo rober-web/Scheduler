@@ -2,6 +2,7 @@ let currentDay = $("#currentDay");
 let container = $("#container");
 let time = $("#theTime");
 let currentHour = dayjs().format('H');
+let eventFieldId;
 
 // 1. Set the current date
 currentDay.append(dayjs().format("dddd, MMMM D"));
@@ -17,17 +18,24 @@ const displaySchedule = () => {
             <tr class="${isPastHour ? 'pastTime' : ''} ${isCurrentHour ? 'currentTime' : ''} ${isFutureHour ? 'futureTime' : ''}">
                 <td class="fs-3 ">${i}:00 </td>
                 <td class="editable fs-5" id="event-${i}"></td>
-                <td id="deleteEvent"><button class="btn btn-danger">Delete</button></td>
+                <td ><button class="btn btn-danger delete" id="delete-${i}">Delete</button></td>
             </tr>
         `);
+        
   }
 };
 
+
 displaySchedule();
 
+
 // 3. Add dblclick event to make theEvent editable
-$("tbody").on("dblclick", ".editable", function () {
+$("tbody").on("dblclick", ".editable", function (e) {
+
+    e.preventDefault();
+
   // Create an input field and set its value to the current text
+ 
   let currentValue = $(this).text().trim();
   let inputField = $('<input class="inputField">')
     .attr("type", "text")
@@ -45,3 +53,14 @@ $("tbody").on("dblclick", ".editable", function () {
     $(this).parent().text(newText);
   });
 });
+
+
+// 4. Delete button
+
+$("tbody").on("click", '.delete', (e)=>{
+    e.preventDefault();
+    //traversing through the parent and previous siblings to "delete" an element
+    $(e.currentTarget).parent().prev().text('');
+
+});
+
