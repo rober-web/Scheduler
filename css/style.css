@@ -18,8 +18,8 @@ header {
   background-color: transparent;
   color: black;
   border-radius: 0;
-  border-bottom: 10px solid black;
-  padding: 60px;
+/*   border-bottom: 10px solid black;
+ */  padding: 60px;
 }
 
 .description {
@@ -91,3 +91,4 @@ header {
 .futureTime{
   background-color:rgba(126, 184, 126, 0.474);
 }
+
